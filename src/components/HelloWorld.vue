@@ -1,11 +1,11 @@
-<template>
+к<template>
   <div class="body-main">
   
     <div class="speaker-form-header"
       v-if="true">
   
       <p v-if="errors.length">
-          <b>Пожалуйста верно заполните указанные ошибки:</b>
+          <b>Пожалуйста, верно заполните указанные поля:</b>
           <ul>
             <li v-for="(error, index) in errors" :key="index">{{ error }}</li>
           </ul>
@@ -390,9 +390,7 @@
                   required>
             </div>
           </div>
-          <!-- <button @submit="checkForm()" type="submit" class="btn btn-primary"
-          :disabled="false">Следующий шаг
-          </button> -->
+      
           </div>
         </div>
         
@@ -499,14 +497,17 @@
           this.errors.push('Укажите группу клиентов');
           this.showErorr = true;
         } 
+        
         if (this.$v.regForm.email.$invalid) {
           this.errors.push('Укажите электронную почту.');
           this.showErorr = true;
         } 
+        
         if (this.$v.regForm.city.$invalid) {
           this.errors.push('Укажите город.');
           this.showErorr = true;
         } 
+        
         if (this.$v.regForm.docType.$invalid) {
           this.errors.push('Укажите тип документа.');
           this.showErorr = true;
@@ -651,7 +652,7 @@
   
   @media screen and (max-width: 524px) {
     h1 {
-      font-size: 18px;
+      font-size: 16px;
     }
   
     .speaker-form-header {
@@ -709,14 +710,17 @@
     color: #a8acc9;
     outline-color: #cdd6f3;
   }
+    
   .form_label input::placeholder,
   .field_multiselect::placeholder {
     color: #a8acc9;
   }
+    
   .form_label input:hover,
   .field_multiselect:hover {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.16);
   }
+    
   .form_label input:focus,
   .field_multiselect:focus {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.16);
@@ -783,9 +787,11 @@
     width: calc(370px - 32px);
     cursor: pointer;
   }
+    
   .field_select option:checked {
     background-color: #eceff3;
   }
+    
   .field_select option:hover {
     background-color: #d5e8fb;
   }
@@ -798,9 +804,11 @@
     margin-right: 9px;
     margin-bottom: 10px;
   }
+    
   .field_multiselect button:hover, .field_multiselect button:focus {
     background-color: #dbd1ee;
   }
+    
   .field_multiselect button:after {
     content: "";
     position: absolute;
